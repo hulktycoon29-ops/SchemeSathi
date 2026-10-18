@@ -54,6 +54,7 @@ public class ApiServer {
         server.setExecutor(Executors.newFixedThreadPool(16));
 
         // Endpoints
+        server.createContext("/", new RootHandler());
         server.createContext("/api/health", new HealthHandler());
         server.createContext("/api/schemes", new SchemesHandler());
         server.createContext("/api/evaluate", new EvaluateHandler());
@@ -121,6 +122,26 @@ public class ApiServer {
             map.put("allowedCategories", cs.getAllowedCategories());
         }
         return map;
+    }
+
+    // Root Handler
+    private class RootHandler implements HttpHandler {
+        @Override
+        public void handle(HttpExchange exchange) throws IOException {
+            addCorsHeaders(exchange);
+            if ("OPTIONS".equalsIgnoreCase(exchange.getRequestMethod())) {
+                exchange.sendResponseHeaders(204, -1);
+                return;
+            }
+            Map<String, Object> res = new LinkedHashMap<>();
+            res.put("status", "UP");
+            res.put("application", "SchemeSathi Java Backend REST API Server");
+            res.put("healthCheck", "/api/health");
+            res.put("schemesApi", "/api/schemes");
+            res.put("loginApi", "/api/auth/login");
+            res.put("message", "SchemeSathi Backend is operational. Access the web interface on your frontend URL.");
+            sendJsonResponse(exchange, 200, res);
+        }
     }
 
     // Health Handler
