@@ -1,0 +1,51 @@
+=================================================================
+               SchemeSathi Eligibility Report                     
+=================================================================
+Generated on: 2026-10-18 21:48:43
+Notice: This is an educational navigator report based on configured rules.
+-----------------------------------------------------------------
+STUDENT PROFILE:
+  • Academic Marks: 60.00%
+  • Annual Family Income: ₹10,000.00
+  • Social Category: sc
+-----------------------------------------------------------------
+ELIGIBLE SCHEMES:
+Found 5 matching scholarship scheme(s):
+
+• Central Need-Based Financial Assistance [ID: INCOME-001] (INCOME)
+  Criteria: Maximum Family Income: ₹250,000.00 per annum
+  Required Documents:
+    - Revenue Authority Income Certificate
+    - Identity Proof (Aadhaar Card)
+    - Active Bank Account Passbook Copy
+
+• Economically Weaker Section Tuition Grant [ID: INCOME-002] (INCOME)
+  Criteria: Maximum Family Income: ₹450,000.00 per annum
+  Required Documents:
+    - Tehsildar Signed Income & Asset Certificate
+    - College Fee Receipt
+    - Domicile Certificate
+
+• Higher Education Pragati Fellowship [ID: INCOME-003] (INCOME)
+  Criteria: Maximum Family Income: ₹800,000.00 per annum
+  Required Documents:
+    - Parental Income Tax Return / Salary Slip / Income Certificate
+    - Admission Confirmation Letter
+    - Identity Proof
+
+• Post-Matric Special Category Scholarship [ID: CATEGORY-001] (CATEGORY)
+  Criteria: Allowed Categories: SC, ST
+  Required Documents:
+    - Digitally Signed Caste / Tribe Certificate
+    - Previous Examination Marksheet
+    - Identity Proof
+
+• National Inclusive Diversity Fellowship [ID: CATEGORY-003] (CATEGORY)
+  Criteria: Allowed Categories: OBC, MINORITY, SC, EWS, ST
+  Required Documents:
+    - Relevant Category / Community Certificate
+    - Institutional Verification Form
+    - Identity Proof
+
+=================================================================
+End of SchemeSathi Report

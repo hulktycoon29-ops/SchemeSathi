@@ -1,0 +1,101 @@
+[
+  {
+    "id": "MERIT-001",
+    "name": "National Academic Excellence Scholarship",
+    "type": "MERIT",
+    "minimumMarks": 85.0,
+    "requiredDocuments": [
+      "Class 10 / 12 Official Marksheet",
+      "Government-issued Photo ID (Aadhaar / Passport)",
+      "Bonafide Student Certificate from College / University"
+    ]
+  },
+  {
+    "id": "MERIT-002",
+    "name": "State Talent Incentive Scheme",
+    "type": "MERIT",
+    "minimumMarks": 75.0,
+    "requiredDocuments": [
+      "Previous Examination Marksheet",
+      "Identity Proof",
+      "Character Certificate from School Head"
+    ]
+  },
+  {
+    "id": "MERIT-003",
+    "name": "STEM & Tech Scholars Award",
+    "type": "MERIT",
+    "minimumMarks": 65.0,
+    "requiredDocuments": [
+      "Enrollment Verification in Technical / Science Course",
+      "Semester Marksheet",
+      "Identity Proof"
+    ]
+  },
+  {
+    "id": "INCOME-001",
+    "name": "Central Need-Based Financial Assistance",
+    "type": "INCOME",
+    "maximumAnnualIncome": 250000.0,
+    "requiredDocuments": [
+      "Revenue Authority Income Certificate",
+      "Identity Proof (Aadhaar Card)",
+      "Active Bank Account Passbook Copy"
+    ]
+  },
+  {
+    "id": "INCOME-002",
+    "name": "Economically Weaker Section Tuition Grant",
+    "type": "INCOME",
+    "maximumAnnualIncome": 450000.0,
+    "requiredDocuments": [
+      "Tehsildar Signed Income & Asset Certificate",
+      "College Fee Receipt",
+      "Domicile Certificate"
+    ]
+  },
+  {
+    "id": "INCOME-003",
+    "name": "Higher Education Pragati Fellowship",
+    "type": "INCOME",
+    "maximumAnnualIncome": 800000.0,
+    "requiredDocuments": [
+      "Parental Income Tax Return / Salary Slip / Income Certificate",
+      "Admission Confirmation Letter",
+      "Identity Proof"
+    ]
+  },
+  {
+    "id": "CATEGORY-001",
+    "name": "Post-Matric Special Category Scholarship",
+    "type": "CATEGORY",
+    "allowedCategories": ["SC", "ST"],
+    "requiredDocuments": [
+      "Digitally Signed Caste / Tribe Certificate",
+      "Previous Examination Marksheet",
+      "Identity Proof"
+    ]
+  },
+  {
+    "id": "CATEGORY-002",
+    "name": "Social Empowerment & Backward Classes Grant",
+    "type": "CATEGORY",
+    "allowedCategories": ["OBC", "EWS"],
+    "requiredDocuments": [
+      "Non-Creamy Layer (NCL) or EWS Certificate",
+      "Family Income Proof",
+      "Institute Identity Card"
+    ]
+  },
+  {
+    "id": "CATEGORY-003",
+    "name": "National Inclusive Diversity Fellowship",
+    "type": "CATEGORY",
+    "allowedCategories": ["SC", "ST", "OBC", "EWS", "MINORITY"],
+    "requiredDocuments": [
+      "Relevant Category / Community Certificate",
+      "Institutional Verification Form",
+      "Identity Proof"
+    ]
+  }
+]

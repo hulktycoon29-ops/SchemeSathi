@@ -1,0 +1,20 @@
+# Java Build Outputs
+target/
+*.class
+
+# Frontend Dependencies and Dist
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Logs and Temp
+*.log
+scratch/
+.system_generated/
+
+# OS and IDE Files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.iml

@@ -1,0 +1,89 @@
+.custom-cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  margin-top: -4px;
+  margin-left: -4px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.04s ease-out, opacity 0.2s ease;
+  will-change: transform;
+}
+
+.custom-cursor-dot.dark {
+  background-color: #7df9ff;
+  box-shadow: 0 0 10px #7df9ff, 0 0 20px rgba(125, 249, 255, 0.8);
+}
+
+.custom-cursor-dot.light {
+  background-color: #0284c7;
+  box-shadow: 0 0 10px #0284c7, 0 0 16px rgba(2, 132, 199, 0.6);
+}
+
+.custom-cursor-dot.clicking {
+  transform: scale(0.6) !important;
+}
+
+.custom-cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 34px;
+  height: 34px;
+  margin-top: -17px;
+  margin-left: -17px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transition: width 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              height 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              margin 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.22s ease,
+              background-color 0.22s ease;
+  will-change: transform;
+}
+
+.custom-cursor-ring.dark {
+  border: 1.5px solid rgba(125, 249, 255, 0.5);
+  background-color: rgba(125, 249, 255, 0.04);
+  box-shadow: 0 0 15px rgba(125, 249, 255, 0.15);
+}
+
+.custom-cursor-ring.light {
+  border: 1.5px solid rgba(2, 132, 199, 0.6);
+  background-color: rgba(2, 132, 199, 0.05);
+  box-shadow: 0 0 12px rgba(2, 132, 199, 0.15);
+}
+
+.custom-cursor-ring.hovering {
+  width: 52px;
+  height: 52px;
+  margin-top: -26px;
+  margin-left: -26px;
+}
+
+.custom-cursor-ring.hovering.dark {
+  border-color: #7df9ff;
+  background-color: rgba(125, 249, 255, 0.12);
+  box-shadow: 0 0 25px rgba(125, 249, 255, 0.35);
+}
+
+.custom-cursor-ring.hovering.light {
+  border-color: #0284c7;
+  background-color: rgba(2, 132, 199, 0.12);
+  box-shadow: 0 0 20px rgba(2, 132, 199, 0.25);
+}
+
+.custom-cursor-ring.clicking {
+  transform: scale(0.85);
+}
+
+@media (pointer: coarse) {
+  .custom-cursor-dot,
+  .custom-cursor-ring {
+    display: none !important;
+  }
+}

@@ -1,0 +1,54 @@
+========================================================
+             SchemeSathi Quick Start Guide
+========================================================
+
+>>> OPTION A: START COMPLETE PROJECT AT ONCE (ONE COMMAND) <<<
+
+Method 1 (Batch launcher - recommended):
+   .\start-all.bat
+   (Or simply double-click 'start-all.bat' in the project folder)
+
+Method 2 (PowerShell one-liner):
+   Start-Process cmd -ArgumentList '/k java -jar target\schemesathi-1.0.0-jar-with-dependencies.jar --server --port 8080'; Start-Process cmd -ArgumentList '/k cd frontend ^&^& npm run dev'
+
+
+--------------------------------------------------------
+>>> OPTION B: START INDIVIDUAL SERVICES <<<
+--------------------------------------------------------
+
+1. START FRONTEND ONLY:
+   Command:
+   cd frontend
+   npm run dev
+
+   (Runs the React + Vite dev server at http://localhost:5173)
+
+2. START BACKEND ONLY:
+   Command:
+   java -jar target\schemesathi-1.0.0-jar-with-dependencies.jar --server --port 8080
+
+   Note on "Address already in use: bind" error:
+   If port 8080 is busy, release it in PowerShell with:
+   Stop-Process -Id (Get-NetTCPConnection -LocalPort 8080).OwningProcess -Force
+
+3. RECOMPILE BACKEND (When updating Java code or credentials):
+   Command:
+   mvn package -DskipTests
+
+
+--------------------------------------------------------
+>>> ACCESS URLS & CREDENTIALS <<<
+--------------------------------------------------------
+
+1. Common User Portal:
+   URL: http://localhost:5173
+   (Register a new student account or sign in to access the navigator)
+
+2. Dedicated Admin Console:
+   URL: http://localhost:5173/#/admin
+
+   Current Admin Credentials:
+   Username: Priyanshu
+   Password: Pg@12345
+   Role:     ADMIN
+========================================================
