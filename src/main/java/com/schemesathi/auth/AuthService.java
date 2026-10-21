@@ -22,8 +22,9 @@ public class AuthService {
     private final SecureRandom secureRandom = new SecureRandom();
 
     public AuthService() {
-        // Seed initial administrator account
-        registerInternal("Priyanshu", "admin@schemesathi.gov", "Pg@12345", "ADMIN");
+        // Seed initial administrator accounts
+        registerInternal("admin", "admin@schemesathi.gov", "Admin@123", "ADMIN");
+        registerInternal("priyanshu", "priyanshu@schemesathi.gov", "Pg@12345", "ADMIN");
         // Seed a sample registered student
         registerInternal("rahul_sharma", "rahul.sharma@example.com", "Student@123", "STUDENT");
 

@@ -11,6 +11,8 @@ frontend/.vite/
 *.log
 scratch/
 .system_generated/
+__pycache__/
+*.pyc
 
 # OS and IDE Files
 .DS_Store

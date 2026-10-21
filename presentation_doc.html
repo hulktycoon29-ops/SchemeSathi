@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SchemeSathi — Complete OOP Project Presentation & Viva Guide</title>
+<style>
+  @page {
+    size: A4;
+    margin: 18mm 16mm 18mm 16mm;
+    @bottom-right {
+      content: counter(page);
+    }
+  }
+
+  body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+    color: #1e293b;
+    line-height: 1.55;
+    background: #ffffff;
+    font-size: 11pt;
+    margin: 0;
+    padding: 0;
+  }
+
+  .cover {
+    page-break-after: always;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 85vh;
+    border-bottom: 4px solid #0284c7;
+    padding-bottom: 2rem;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #e0f2fe;
+    color: #0369a1;
+    font-weight: 700;
+    font-size: 9pt;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    margin-bottom: 1rem;
+    width: fit-content;
+  }
+
+  h1.title {
+    font-size: 26pt;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.2;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .subtitle {
+    font-size: 14pt;
+    color: #475569;
+    margin-bottom: 2rem;
+    font-weight: 500;
+  }
+
+  .meta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.25rem;
+    margin-top: 2rem;
+  }
+
+  .meta-item {
+    font-size: 10pt;
+  }
+  .meta-label {
+    color: #64748b;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 8pt;
+    letter-spacing: 0.05em;
+  }
+  .meta-val {
+    color: #0f172a;
+    font-weight: 700;
+    font-size: 11pt;
+    margin-top: 2px;
+  }
+
+  .page-break {
+    page-break-after: always;
+  }
+
+  h2 {
+    font-size: 16pt;
+    color: #0f172a;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 6px;
+    margin-top: 24pt;
+    margin-bottom: 12pt;
+    font-weight: 700;
+  }
+
+  h3 {
+    font-size: 12pt;
+    color: #0369a1;
+    margin-top: 14pt;
+    margin-bottom: 6pt;
+    font-weight: 700;
+  }
+
+  p {
+    margin: 0 0 8pt 0;
+  }
+
+  ul, ol {
+    margin: 0 0 10pt 0;
+    padding-left: 20px;
+  }
+
+  li {
+    margin-bottom: 4pt;
+  }
+
+  .callout {
+    background: #f0fdf4;
+    border-left: 4px solid #16a34a;
+    padding: 10pt 12pt;
+    border-radius: 0 8px 8px 0;
+    margin: 12pt 0;
+    font-size: 10pt;
+  }
+
+  .callout-cyan {
+    background: #f0f9ff;
+    border-left: 4px solid #0284c7;
+    padding: 10pt 12pt;
+    border-radius: 0 8px 8px 0;
+    margin: 12pt 0;
+    font-size: 10pt;
+  }
+
+  .callout-purple {
+    background: #faf5ff;
+    border-left: 4px solid #9333ea;
+    padding: 10pt 12pt;
+    border-radius: 0 8px 8px 0;
+    margin: 12pt 0;
+    font-size: 10pt;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12pt 0;
+    font-size: 9.5pt;
+  }
+
+  th {
+    background: #0f172a;
+    color: #ffffff;
+    text-align: left;
+    padding: 7pt 10pt;
+    font-weight: 600;
+  }
+
+  td {
+    padding: 7pt 10pt;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  tr:nth-child(even) td {
+    background: #f8fafc;
+  }
+
+  code {
+    background: #f1f5f9;
+    color: #0f172a;
+    font-family: 'Consolas', 'Courier New', monospace;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-size: 9.5pt;
+  }
+
+  pre {
+    background: #0f172a;
+    color: #f8fafc;
+    padding: 12pt;
+    border-radius: 8px;
+    font-family: 'Consolas', monospace;
+    font-size: 9pt;
+    line-height: 1.45;
+    overflow-x: auto;
+    margin: 10pt 0;
+  }
+
+  .tag {
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-size: 8pt;
+    font-weight: 700;
+  }
+  .tag-merit { background: #dbeafe; color: #1e40af; }
+  .tag-income { background: #dcfce7; color: #15803d; }
+  .tag-category { background: #fef3c7; color: #b45309; }
+
+  .qna-box {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 10pt 14pt;
+    margin-bottom: 12pt;
+  }
+  .qna-q {
+    font-weight: 700;
+    color: #0f172a;
+    font-size: 11pt;
+    margin-bottom: 4pt;
+  }
+  .qna-a {
+    color: #334155;
+    font-size: 10pt;
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER PAGE -->
+<div class="cover">
+  <div class="badge">Object-Oriented Programming (Java) Project</div>
+  <h1 class="title">SchemeSathi</h1>
+  <div class="subtitle">Scholarship Eligibility Navigator & Security Management System</div>
+  
+  <p style="font-size: 12pt; color: #334155; max-width: 90%;">
+    A production-grade full-stack software application demonstrating complete <b>Java Object-Oriented Programming (OOP)</b> principles (Abstraction, Encapsulation, Inheritance, Polymorphism), clean layered architecture, RESTful API server, SHA-256 cryptographic session security, and modern React 19 web frontend with interactive UI & audit telemetry.
+  </p>
+
+  <div class="meta-grid">
+    <div class="meta-item">
+      <div class="meta-label">Author / Developer</div>
+      <div class="meta-val">Priyanshu Gupta (hulktycoon29-ops)</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Language & Runtime</div>
+      <div class="meta-val">Java 17 (OOP Engine) + Node.js (React 19)</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Build Tool & Testing</div>
+      <div class="meta-val">Maven (24 Unit Tests Passing via JUnit 5)</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Deployment Architecture</div>
+      <div class="meta-val">Docker Container on Render Cloud (Full HTTPS)</div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 1: PROJECT OVERVIEW & ARCHITECTURE -->
+<h2>1. Project Executive Summary</h2>
+<p>
+  <b>SchemeSathi</b> solves the information fragmentation problem faced by Indian students attempting to discover and navigate government and private educational scholarship programs. Instead of parsing dense PDF eligibility guidelines, students submit their academic marks, annual family income, and demographic category. The system executes a polymorphic OOP rule engine to determine real-time qualification, outputs reasons for disqualification, lists mandatory documentation, and generates auditable text reports.
+</p>
+
+<div class="callout-cyan">
+  <b>Dual Interface Architecture:</b><br>
+  1. <b>Headless Interactive Console (CLI)</b>: Pure Java console interface for terminals and low-resource environments.<br>
+  2. <b>Cloud REST API + Modern Web Application</b>: Embedded HTTP microserver powering a responsive React web interface with light/dark themes and a dedicated administrative session auditing gateway.
+</div>
+
+<h3>Project Layered Directory Structure</h3>
+<pre>
+c:\Users\hp\OneDrive\Desktop\JAVA PROJECT\
+├── pom.xml                                   # Maven configuration & dependencies
+├── Dockerfile                                # Multi-stage Java 17 production container
+├── render.yaml                               # Render cloud blueprint
+├── data/
+│   └── schemes.json                          # JSON rule repository for scholarships
+├── src/
+│   ├── main/java/com/schemesathi/
+│   │   ├── Main.java                         # Application entrypoint (CLI or REST Server)
+│   │   ├── model/                            # OOP Domain Entities
+│   │   │   ├── Student.java                  # Encapsulated Student model
+│   │   │   ├── Scheme.java                   # Abstract base class
+│   │   │   ├── MeritScheme.java              # Inherited Merit rule evaluator
+│   │   │   ├── IncomeScheme.java             # Inherited Income rule evaluator
+│   │   │   └── CategoryScheme.java           # Inherited Category rule evaluator
+│   │   ├── service/                          # Business Logic
+│   │   │   └── EligibilityService.java       # Polymorphic evaluation engine
+│   │   ├── loader/                           # Data Ingestion
+│   │   │   ├── SchemeRule.java               # Rule DTO
+│   │   │   └── SchemeLoader.java             # Deserializer factory
+│   │   ├── report/                           # File I/O & Document Generation
+│   │   │   ├── ReportWriter.java             # Interface for report exporters
+│   │   │   └── EligibilityReportWriter.java  # Formatted text report generator
+│   │   ├── auth/                             # Security & Auditing
+│   │   │   ├── User.java                     # User credentials model
+│   │   │   ├── LoginRecord.java              # Immutable audit trail entity
+│   │   │   └── AuthService.java              # SHA-256 salted hashing & session store
+│   │   ├── server/                           # HTTP Microserver
+│   │   │   └── ApiServer.java                # REST endpoints (/api/evaluate, /api/auth)
+│   │   └── ui/                               # Console Presentation
+│   │       └── ConsoleUI.java                # Interactive CLI
+│   └── test/java/com/schemesathi/            # 24 Unit tests covering all models & services
+└── frontend/                                 # Modern React 19 + Vite Application
+    ├── src/App.jsx                           # Gateway & Navigator logic
+    └── src/index.css                         # CSS design system (Light & Dark mode tokens)
+</pre>
+
+<div class="page-break"></div>
+
+<!-- SECTION 2: THE 4 CORE OOP CONCEPTS IN SCHEMESATHI -->
+<h2>2. Complete OOP Concepts Mapping</h2>
+<p>
+  Every single core concept of Object-Oriented Programming has been deliberately implemented and cleanly decoupled in the codebase.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="width: 22%;">OOP Concept</th>
+      <th style="width: 38%;">Where is it Implemented?</th>
+      <th style="width: 40%;">How does it Work in SchemeSathi?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>1. Abstraction</b></td>
+      <td>
+        • <code>com.schemesathi.model.Scheme</code><br>
+        • <code>com.schemesathi.report.ReportWriter</code>
+      </td>
+      <td>
+        <code>Scheme</code> is an <b>abstract class</b> defining common attributes (id, name, required documents) and abstract methods <code>isEligible(Student s)</code> and <code>getCriteriaDescription()</code>. Callers don't need to know how rules work internally.<br>
+        <code>ReportWriter</code> is an <b>interface</b> hiding file I/O operations behind a clean <code>generateReport(...)</code> signature.
+      </td>
+    </tr>
+    <tr>
+      <td><b>2. Encapsulation</b></td>
+      <td>
+        • <code>Student.java</code><br>
+        • <code>User.java</code><br>
+        • <code>AuthService.java</code>
+      </td>
+      <td>
+        All member fields are declared <b><code>private</code></b>. Access is regulated via validated getters and setters. In <code>Student</code>, marks must be 0–100% and income cannot be negative. In <code>User</code>, password hashes and salts are strictly immutable once created.
+      </td>
+    </tr>
+    <tr>
+      <td><b>3. Inheritance</b></td>
+      <td>
+        • <code>MeritScheme extends Scheme</code><br>
+        • <code>IncomeScheme extends Scheme</code><br>
+        • <code>CategoryScheme extends Scheme</code>
+      </td>
+      <td>
+        Subclasses inherit common attributes and behaviors from <code>Scheme</code> using <code>super(id, name, type, docs)</code>, while introducing specialized rule fields (e.g. <code>minimumMarks</code> in <code>MeritScheme</code>, <code>maximumAnnualIncome</code> in <code>IncomeScheme</code>).
+      </td>
+    </tr>
+    <tr>
+      <td><b>4. Polymorphism</b></td>
+      <td>
+        • <code>EligibilityService.java</code><br>
+        • Dynamic method dispatch in <code>scheme.isEligible(student)</code>
+      </td>
+      <td>
+        The engine holds a polymorphic collection <code>List&lt;Scheme&gt;</code>. At runtime, when <code>scheme.isEligible(student)</code> is invoked, Java automatically executes the correct subclass logic (Merit vs. Income vs. Category) <b>without any <code>instanceof</code> checks or switch statements</b>.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="callout-purple">
+  <b>Deep Dive into Polymorphism in Action:</b><br>
+  In <code>EligibilityService.java</code>:
+  <pre style="background: #1e1b4b; color: #e0e7ff;">
+public List&lt;Scheme&gt; findEligibleSchemes(Student student, List&lt;Scheme&gt; schemes) {
+    List&lt;Scheme&gt; eligible = new ArrayList&lt;&gt;();
+    for (Scheme scheme : schemes) {
+        // POLYMORPHIC CALL: Dynamic dispatch binds to concrete subclass at runtime!
+        if (scheme.isEligible(student)) {
+            eligible.add(scheme);
+        }
+    }
+    return eligible;
+}</pre>
+  If a new scholarship type (e.g., <code>SportsScheme</code>) is added tomorrow, <b>zero lines of code in <code>EligibilityService</code> need to change</b>. This satisfies the <b>Open/Closed Principle (SOLID)</b>.
+</div>
+
+<div class="page-break"></div>
+
+<!-- SECTION 3: SYSTEM WORKFLOW & ARCHITECTURAL PIPELINE -->
+<h2>3. Complete End-to-End Execution Flow</h2>
+<p>
+  How a student profile travels from the user's browser, through network boundaries, into the OOP engine, and back:
+</p>
+
+<ol>
+  <li>
+    <b>User Authentication & Gateway Check</b>:<br>
+    The user enters credentials into the React frontend. The request hits <code>/api/auth/login</code> (or <code>/api/auth/register</code>). <code>AuthService</code> computes <code>SHA-256(password + salt)</code>. If valid, an encrypted session token <code>STOK-...</code> is returned and stored in the browser's <code>localStorage</code>.
+  </li>
+  <li>
+    <b>Student Profile Ingestion</b>:<br>
+    The user specifies their marks (e.g., <code>85.5%</code>), family annual income (e.g., <code>₹2,40,000</code>), and category (e.g., <code>OBC</code>).
+  </li>
+  <li>
+    <b>REST API Dispatch</b>:<br>
+    The React client issues an asynchronous HTTP POST to <code>/api/evaluate</code> with a JSON payload.
+  </li>
+  <li>
+    <b>Object Instantiation (Encapsulation)</b>:<br>
+    The backend <code>EvaluateHandler</code> parses JSON and constructs an immutable <code>Student</code> domain object:
+    <code>Student student = new Student("S101", "Rahul", 85.5, 240000.0, "OBC");</code>.
+  </li>
+  <li>
+    <b>Polymorphic Evaluation</b>:<br>
+    <code>EligibilityService.evaluateWithBreakdown(student, schemes)</code> iterates through all loaded schemes. For each scheme:
+    <ul>
+      <li><code>MeritScheme.isEligible()</code>: Checks if <code>student.getMarksPercentage() >= minimumMarks</code>.</li>
+      <li><code>IncomeScheme.isEligible()</code>: Checks if <code>student.getAnnualIncome() <= maximumAnnualIncome</code>.</li>
+      <li><code>CategoryScheme.isEligible()</code>: Checks if <code>allowedCategories.contains(student.getCategory())</code>.</li>
+    </ul>
+  </li>
+  <li>
+    <b>Report Generation (Interface Abstraction)</b>:<br>
+    <code>EligibilityReportWriter</code> generates a formatted audit report into <code>output/eligibility-report.txt</code>, detailing qualifying and non-qualifying schemes with reasons.
+  </li>
+  <li>
+    <b>Client Presentation</b>:<br>
+    The HTTP server returns HTTP 200 with JSON breakdown. The React interface triggers an electric loading transition and reveals the qualified scholarships and document checklists.
+  </li>
+</ol>
+
+<div class="callout">
+  <b>Admin Auditing Flow:</b><br>
+  Whenever any user signs in or checks schemes, <code>AuthService.recordLoginAttempt(...)</code> stores an immutable <code>LoginRecord</code> with IP address, role, and ISO timestamp. Only users authenticated with role <code>ADMIN</code> (e.g. <code>Priyanshu</code>) can access <code>/#/admin</code>, fetch live audit telemetry, or download the full audit log as a CSV spreadsheet.
+</div>
+
+<div class="page-break"></div>
+
+<!-- SECTION 4: FREQUENTLY ASKED VIVA & PRESENTATION QUESTIONS -->
+<h2>4. High-Yield Viva & Defense Q&A</h2>
+<p>
+  Use these structured answers during your presentation to impress your professors or evaluators:
+</p>
+
+<div class="qna-box">
+  <div class="qna-q">Q1: Why did you make <code>Scheme</code> an abstract class instead of an interface?</div>
+  <div class="qna-a">
+    <b>Answer:</b> An abstract class was chosen because all scholarships share common <b>state</b> (fields: <code>id</code>, <code>name</code>, <code>type</code>, <code>requiredDocuments</code>) and common <b>behavior</b> (getters, setters, document validation). An interface in Java cannot hold instance state. By using an abstract class with a <code>super(...)</code> constructor, we achieve code reusability while still enforcing abstract methods (<code>isEligible</code>) on every subclass.
+  </div>
+</div>
+
+<div class="qna-box">
+  <div class="qna-q">Q2: Where is Dynamic Method Dispatch (Runtime Polymorphism) used?</div>
+  <div class="qna-a">
+    <b>Answer:</b> In <code>EligibilityService.java</code>, line 20: <code>scheme.isEligible(student)</code>. The variable <code>scheme</code> is declared as the abstract base type <code>Scheme</code>, but points to instances of <code>MeritScheme</code>, <code>IncomeScheme</code>, or <code>CategoryScheme</code>. Java resolves which method implementation to execute at runtime based on the actual object in memory.
+  </div>
+</div>
+
+<div class="qna-box">
+  <div class="qna-q">Q3: How have you applied Encapsulation and Data Protection?</div>
+  <div class="qna-a">
+    <b>Answer:</b> 
+    1. In <code>Student.java</code>, all fields are <code>private</code> with input validation in constructors and setters (e.g. throwing <code>IllegalArgumentException</code> if marks are negative or exceed 100%).<br>
+    2. In <code>AuthService.java</code>, passwords are never stored in plaintext. They are protected using SHA-256 cryptographic hashing combined with a 16-byte cryptographically secure random salt generated via <code>SecureRandom</code>.
+  </div>
+</div>
+
+<div class="qna-box">
+  <div class="qna-q">Q4: How does the Java backend communicate with the React frontend?</div>
+  <div class="qna-a">
+    <b>Answer:</b> We built an embedded <code>HttpServer</code> in <code>ApiServer.java</code> listening on a configurable port. It exposes RESTful JSON endpoints (<code>/api/evaluate</code>, <code>/api/schemes</code>, <code>/api/auth/login</code>) and includes CORS headers (<code>Access-Control-Allow-Origin: *</code>) to allow seamless cross-origin requests from the React client.
+  </div>
+</div>
+
+<div class="qna-box">
+  <div class="qna-q">Q5: How is this project deployed in production?</div>
+  <div class="qna-a">
+    <b>Answer:</b> We containerized the backend using a multi-stage <b>Dockerfile</b> with Maven build and an <code>eclipse-temurin:17-jre</code> minimal runtime. The backend is deployed as a Docker Web Service on <b>Render Cloud</b> reading dynamic <code>$PORT</code> variables. The React frontend is deployed as a high-performance <b>Static Site</b> with client-side rewrite rules.
+  </div>
+</div>
+
+<div class="qna-box">
+  <div class="qna-q">Q6: How does the system handle unit testing?</div>
+  <div class="qna-a">
+    <b>Answer:</b> We wrote <b>24 comprehensive JUnit 5 unit tests</b> covering <code>StudentTest</code>, <code>SchemeTest</code>, <code>EligibilityServiceTest</code>, <code>SchemeLoaderTest</code>, <code>EligibilityReportWriterTest</code>, and <code>AuthServiceTest</code>. All tests run and pass automatically during <code>mvn test</code>.
+  </div>
+</div>
+
+<div style="margin-top: 2rem; border-top: 1px solid #e2e8f0; padding-top: 1rem; font-size: 9pt; color: #64748b; text-align: center;">
+  SchemeSathi © 2026 • Prepared for Academic & Project Defense • Author: Priyanshu Gupta
+</div>
+
+</body>
+</html>

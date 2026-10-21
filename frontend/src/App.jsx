@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import CursorGrid from './components/animations/CursorGrid';
 import ElectricBorder from './components/animations/ElectricBorder';
 import localSchemes from './data/schemes.json';
 import { 
@@ -580,25 +579,7 @@ export default function App() {
 
   return (
     <>
-      {/* Background Cursor Grid Animation Layer (Synced with theme) */}
-      <div className="site-cursor-grid-wrap">
-        <CursorGrid
-          key={theme}
-          className="site-cursor-grid"
-          cellSize={60}
-          color={theme === 'dark' ? '#ffffff' : '#0f172a'}
-          gridColor={theme === 'dark' ? '#ffffff' : '#0f172a'}
-          highlight="area"
-          gridStyle="lines"
-          radius={140}
-          holdTime={400}
-          fadeDuration={800}
-          fillOpacity={theme === 'dark' ? 0.06 : 0.035}
-          gridOpacity={theme === 'dark' ? 0.08 : 0.065}
-          spotlight={theme === 'dark' ? 0.6 : 0.45}
-          clickPulse
-        />
-      </div>
+
 
       {/* ========================================================================= */}
       {/* SCENARIO A: DEDICATED ADMIN PORTAL (Accessible strictly at /admin or #/admin) */}

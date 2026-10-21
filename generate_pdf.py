@@ -335,7 +335,12 @@ def build_pdf(filename="SchemeSathi_OOP_Project_Presentation_Guide.pdf"):
         story.append(Spacer(1, 6))
 
     doc.build(story, canvasmaker=NumberedCanvas)
-    print(f"[SUCCESS] PDF generated: {filename}")
+    print(f"[SUCCESS] Defense Guide PDF generated: {filename}")
 
 if __name__ == "__main__":
     build_pdf()
+    try:
+        from generate_presentation_pdf import create_presentation_pdf
+        create_presentation_pdf("SchemeSathi_Faculty_Presentation.pdf")
+    except Exception as e:
+        print(f"[!] Note: Could not auto-trigger presentation PDF: {e}")
