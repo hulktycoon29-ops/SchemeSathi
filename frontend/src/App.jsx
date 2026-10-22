@@ -1333,15 +1333,6 @@ export default function App() {
                 )}
               </div>
             </main>
-
-            {/* Footer */}
-            <footer className="site-footer">
-              <div className="container">
-                <p>
-                  SchemeSathi © 2026 — Scholarship Eligibility Navigator • Object-Oriented Java Backend + Modern React Web Interface
-                </p>
-              </div>
-            </footer>
           </div>
         )
       )}
