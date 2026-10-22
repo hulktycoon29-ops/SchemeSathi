@@ -1,6 +1,6 @@
 # SchemeSathi — Scholarship Eligibility Navigator 🎓⚡
 
-**SchemeSathi** is an educational scholarship navigator built with a **Java Object-Oriented Programming (OOP) Backend** and a modern **React Web UI** featuring **WebGL2 canvas animations** (`CursorGrid` & `ElectricBorder`).
+**SchemeSathi** is an educational scholarship navigator built with a **Java Object-Oriented Programming (OOP) Backend** and a modern **React Web UI** featuring **WebGL2 canvas animations** (`CursorGrid`).
 
 ---
 
@@ -22,7 +22,6 @@
    - **Built-in REST API Server**: High-performance HTTP server (`com.sun.net.httpserver`) providing `/api/health`, `/api/schemes`, `/api/evaluate`, and `/api/report`.
 3. **Modern Web UI with Dynamic Animations**:
    - Interactive WebGL2 **`CursorGrid`** background from React Bits.
-   - Crackling cyan electric accent **`ElectricBorder`** highlighting the Hero section and Top Eligible Scheme cards.
    - Instant criteria slider/inputs, quick test presets, catalog explorer, and 1-click official report download.
 
 ---
@@ -101,7 +100,7 @@ JAVA PROJECT/
 │   └── test/java/com/schemesathi/     # Comprehensive JUnit 5 test suite
 ├── frontend/                          # Modern React + Vite application
 │   ├── src/
-│   │   ├── components/animations/     # CursorGrid & ElectricBorder (WebGL2)
+│   │   ├── components/animations/     # CursorGrid (WebGL2)
 │   │   ├── App.jsx                    # Reactive UI with live evaluation & presets
 │   │   └── index.css                  # Modern dark theme design system
 ├── target/

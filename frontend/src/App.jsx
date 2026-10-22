@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import ElectricBorder from './components/animations/ElectricBorder';
 import localSchemes from './data/schemes.json';
 import { 
   GraduationCap, 
@@ -575,8 +574,6 @@ export default function App() {
     );
   });
 
-  const electricColor = theme === 'dark' ? '#7df9ff' : '#0284c7';
-
   return (
     <>
 
@@ -837,16 +834,7 @@ export default function App() {
               </button>
             </div>
 
-            <ElectricBorder
-              color={electricColor}
-              speed={1}
-              chaos={0.5}
-              spread={0.6}
-              strands={3}
-              thickness={1.5}
-              borderRadius={24}
-            >
-              <div className="auth-gateway-card">
+            <div className="auth-gateway-card">
                 <div className="auth-brand-center">
                   <div className="auth-brand-icon">
                     <GraduationCap size={28} />
@@ -977,7 +965,6 @@ export default function App() {
                   </button>
                 </form>
               </div>
-            </ElectricBorder>
           </div>
         ) : (
           /* USER LOGGED IN: Reveal Complete Website Interface */
@@ -1031,20 +1018,11 @@ export default function App() {
               </div>
             </header>
 
-            {/* Hero Section Wrapped with ElectricBorder */}
+            {/* Hero Section */}
             <section className="hero-section">
               <div className="container">
                 <div className="hero-border-wrap">
-                  <ElectricBorder
-                    color={electricColor}
-                    speed={1}
-                    chaos={0.5}
-                    spread={0.6}
-                    strands={3}
-                    thickness={1.5}
-                    borderRadius={24}
-                  >
-                    <div className="hero-card">
+                  <div className="hero-card">
                       <div className="hero-pill">
                         <Sparkles size={14} />
                         <span>Welcome, {currentUser.username}! • Intelligent Scholarship Navigator</span>
@@ -1074,7 +1052,6 @@ export default function App() {
                         </div>
                       </div>
                     </div>
-                  </ElectricBorder>
                 </div>
               </div>
             </section>
@@ -1245,64 +1222,41 @@ export default function App() {
                             </p>
                           </div>
                         ) : (
-                          evaluatedResults.map((scheme, index) => {
-                            const isTopMatch = index === 0;
-
-                            const cardContent = (
-                              <div className="scheme-card" style={isTopMatch ? { borderRadius: '20px' } : undefined}>
-                                <div className="scheme-top">
-                                  <div>
-                                    <span className={`type-pill ${scheme.type}`}>{scheme.type}</span>
-                                    <h4 className="scheme-title" style={{ marginTop: '0.4rem' }}>{scheme.name}</h4>
-                                  </div>
-                                  <span className="label-hint font-mono">{scheme.id}</span>
+                          evaluatedResults.map((scheme) => (
+                            <div key={scheme.id} className="scheme-card">
+                              <div className="scheme-top">
+                                <div>
+                                  <span className={`type-pill ${scheme.type}`}>{scheme.type}</span>
+                                  <h4 className="scheme-title" style={{ marginTop: '0.4rem' }}>{scheme.name}</h4>
                                 </div>
-
-                                <div className="criteria-badge">
-                                  <ShieldCheck size={14} color="var(--accent-cyan)" />
-                                  <span>
-                                    {scheme.type === 'MERIT' && `Criterion: Min Marks ≥ ${scheme.minimumMarks}%`}
-                                    {scheme.type === 'INCOME' && `Criterion: Max Annual Income ≤ ₹${Number(scheme.maximumAnnualIncome).toLocaleString('en-IN')}`}
-                                    {scheme.type === 'CATEGORY' && `Criterion: Allowed Categories: ${(scheme.allowedCategories || []).join(', ')}`}
-                                  </span>
-                                </div>
-
-                                <div className="docs-section">
-                                  <div className="docs-heading">
-                                    <CheckCircle2 size={13} color="#10b981" />
-                                    <span>Required Documents Checklist</span>
-                                  </div>
-                                  <ul className="docs-list">
-                                    {(scheme.requiredDocuments || []).map((doc, dIdx) => (
-                                      <li key={dIdx} className="doc-item">
-                                        <ArrowRight size={13} />
-                                        <span>{doc}</span>
-                                      </li>
-                                    ))}
-                                  </ul>
-                                </div>
+                                <span className="label-hint font-mono">{scheme.id}</span>
                               </div>
-                            );
 
-                            if (isTopMatch) {
-                              return (
-                                <ElectricBorder
-                                  key={scheme.id}
-                                  color={electricColor}
-                                  speed={1}
-                                  chaos={0.5}
-                                  spread={0.6}
-                                  strands={3}
-                                  thickness={1.5}
-                                  borderRadius={20}
-                                >
-                                  {cardContent}
-                                </ElectricBorder>
-                              );
-                            }
+                              <div className="criteria-badge">
+                                <ShieldCheck size={14} color="var(--accent-cyan)" />
+                                <span>
+                                  {scheme.type === 'MERIT' && `Criterion: Min Marks ≥ ${scheme.minimumMarks}%`}
+                                  {scheme.type === 'INCOME' && `Criterion: Max Annual Income ≤ ₹${Number(scheme.maximumAnnualIncome).toLocaleString('en-IN')}`}
+                                  {scheme.type === 'CATEGORY' && `Criterion: Allowed Categories: ${(scheme.allowedCategories || []).join(', ')}`}
+                                </span>
+                              </div>
 
-                            return <div key={scheme.id}>{cardContent}</div>;
-                          })
+                              <div className="docs-section">
+                                <div className="docs-heading">
+                                  <CheckCircle2 size={13} color="#10b981" />
+                                  <span>Required Documents Checklist</span>
+                                </div>
+                                <ul className="docs-list">
+                                  {(scheme.requiredDocuments || []).map((doc, dIdx) => (
+                                    <li key={dIdx} className="doc-item">
+                                      <ArrowRight size={13} />
+                                      <span>{doc}</span>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            </div>
+                          ))
                         )}
                       </div>
                     ) : (
